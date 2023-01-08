@@ -1,4 +1,4 @@
-local spawnPos = vector3(686.245, 577.950, 130.461)
+local spawnPos = vector3(-425.51, 1123.56, 325.85)
 
 AddEventHandler('onClientGameTypeStart', function()
     exports.spawnmanager:setAutoSpawnCallback(function()
@@ -6,14 +6,16 @@ AddEventHandler('onClientGameTypeStart', function()
             x = spawnPos.x,
             y = spawnPos.y,
             z = spawnPos.z,
-            model = 'a_m_y_hipster_01'
+            model = 'a_m_y_skater_01'
         }, function()
             TriggerEvent('chat:addMessage', {
-                args = { 'Welcome to Alex's dev server!' }
+                args = { "Welcome To Alex's dev server!" }
             })
         end)
     end)
-
+      
     exports.spawnmanager:setAutoSpawn(true)
     exports.spawnmanager:forceRespawn()
+    Citizen.Wait(500)
+    exports.spawnmanager:setAutoSpawn(false)
 end)
